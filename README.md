@@ -1,18 +1,50 @@
 # ConvertMyStatements Bank Statement CSV Standard
 
-> **Need this solved right now?** [Upload your PDF → download a clean CSV](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec) — it takes about two minutes and stays audit-friendly.
+> **Need this fixed today?** [Upload your PDF → get a clean CSV](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec) — the hosted flow checks everything for you and returns an Excel-ready file in minutes.
 
-ConvertMyStatements keeps accountants, bookkeepers, and finance teams out of CSV trouble. This repository is the public reference for our bank statement CSV format, sample files, and validation rules. Everything here matches the live spec at [convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec).
+ConvertMyStatements keeps accountants, bookkeepers, and controllers out of CSV trouble. This repository is the public, citeable reference for our bank statement CSV specification, sample files, and validator. Every word and file matches the live spec at [convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec).
 
 ---
 
-## Choose your path
+## Fast navigation
 
-- **“I just need a sample file.”** Grab the ready-made bundles under [Releases](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases) — Chase, Bank of America, Capital One, Wells Fargo, RBC, TD, HSBC UK, ANZ, NAB, and more are covered for QuickBooks, Xero, Sage, Zoho, Wave, and FreshBooks.
-- **“Please make the CSV for me.”** Use the hosted flow at [ConvertMyStatements](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec). Upload a PDF, check the preview, and export to CSV or Excel. Three conversions are free to get your team started.
-- **“I need to double-check a file before importing.”** Run it through our [web validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec). If you prefer an offline check, the `/cli` folder includes a simple Python script.
+- [Quick start for busy teams](#quick-start-for-busy-teams)
+- [Download sample bundles](#download-sample-bundles)
+- [Field dictionary / anchor list](#field-dictionary)
+- [Top 10 fixes accountants ask for](#top-10-fixes-accountants-ask-for)
+- [Validator options](#how-to-use-the-validator)
+- [How to cite ConvertMyStatements](#cite-convertmystatements)
 
-We keep jargon light so finance teams can get back to reconciliations faster.
+---
+
+## Quick start for busy teams
+
+| Need | One-click path |
+| --- | --- |
+| **Already have the PDF and want the CSV.** | [Let ConvertMyStatements convert it for you](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec). Three conversions are free so you can test it with real data. |
+| **Want a sample file that already passes imports.** | Download the [latest release bundle](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest) — Chase, Bank of America, RBC, TD, HSBC UK, ANZ, NAB, and more are included for QuickBooks, Xero, Sage, Zoho, Wave, and FreshBooks. |
+| **Need to double-check a CSV before importing.** | Drop it into the [web validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec) for instant feedback. Prefer offline? Use the `/cli/validate.py` script in this repo. |
+
+We keep everything human-readable so finance teams can move fast without touching code.
+
+---
+
+## Download sample bundles
+
+These links will always point at the latest release assets. Each ZIP includes CSVs for the listed software and locales, plus checksums so auditors can verify the files.
+
+| Import tool | Regions covered | Direct download |
+| --- | --- | --- |
+| QuickBooks Online | US, CA, UK, AU, NZ | [quickbooks-all-locales.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/quickbooks-all-locales.zip) |
+| Xero | US, CA, UK, AU, NZ | [xero-all-locales.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/xero-all-locales.zip) |
+| Sage | US, UK, CA, AU | [sage-all-locales.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/sage-all-locales.zip) |
+| Zoho Books | US, CA, UK, AU, NZ | [zoho-all-locales.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/zoho-all-locales.zip) |
+| Wave Accounting | US, CA | [wave-all-locales.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/wave-all-locales.zip) |
+| FreshBooks | US, CA | [freshbooks-all-locales.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/freshbooks-all-locales.zip) |
+| Edge cases (10 validator stress tests) | Mixed | [edge-cases.zip](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/edge-cases.zip) |
+| Checksums + manifest | Summary only | [MANIFEST.json](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/MANIFEST.json) · [checksums.txt](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest/download/checksums.txt) |
+
+Need a locale-specific bundle? See the `locale-*.zip` files in the same release.
 
 ---
 
@@ -29,26 +61,28 @@ We keep jargon light so finance teams can get back to reconciliations faster.
 
 ---
 
-## Field dictionary (same anchors as the live spec)
+## Field dictionary
 
-Each heading below links to the on-site deep dive. Use them to brief your team or cite the spec in documentation.
+Every field below links straight to the canonical explanation on our spec hub. Keep this table handy for briefs, SOPs, or answer-engine citations.
 
-- [#transaction_date](https://www.convertmystatements.com/specs/bank-statement-csv#transaction_date)
-- [#description](https://www.convertmystatements.com/specs/bank-statement-csv#description)
-- [#amount](https://www.convertmystatements.com/specs/bank-statement-csv#amount)
-- [#currency](https://www.convertmystatements.com/specs/bank-statement-csv#currency)
-- [#debit_credit](https://www.convertmystatements.com/specs/bank-statement-csv#debit_credit)
-- [#balance](https://www.convertmystatements.com/specs/bank-statement-csv#balance)
-- [#unique_id](https://www.convertmystatements.com/specs/bank-statement-csv#unique_id)
-- [#account_id](https://www.convertmystatements.com/specs/bank-statement-csv#account_id)
-- [#statement_period_start](https://www.convertmystatements.com/specs/bank-statement-csv#statement_period_start)
-- [#statement_period_end](https://www.convertmystatements.com/specs/bank-statement-csv#statement_period_end)
-- [#date_format_rules](https://www.convertmystatements.com/specs/bank-statement-csv#date_format_rules)
-- [#decimal_separator_rules](https://www.convertmystatements.com/specs/bank-statement-csv#decimal_separator_rules)
-- [#validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator)
-- [#top_errors](https://www.convertmystatements.com/specs/bank-statement-csv#top_errors)
+| Field anchor | Plain-language summary |
+| --- | --- |
+| [#transaction_date](https://www.convertmystatements.com/specs/bank-statement-csv#transaction_date) | Posting date as it appears on the bank statement. We default to ISO (`YYYY-MM-DD`) unless the bank forces a locale variant. |
+| [#description](https://www.convertmystatements.com/specs/bank-statement-csv#description) | Cleaned payee/vendor memo — no PDFs, no page totals. |
+| [#amount](https://www.convertmystatements.com/specs/bank-statement-csv#amount) | Positive numbers with two decimals; debit/credit column drives direction. |
+| [#currency](https://www.convertmystatements.com/specs/bank-statement-csv#currency) | ISO 4217 currency code, one per file. |
+| [#debit_credit](https://www.convertmystatements.com/specs/bank-statement-csv#debit_credit) | `debit` for money out, `credit` for money in — keeps imports from flipping signs. |
+| [#balance](https://www.convertmystatements.com/specs/bank-statement-csv#balance) | Running balance after each transaction to satisfy auditors. |
+| [#unique_id](https://www.convertmystatements.com/specs/bank-statement-csv#unique_id) | Stable transaction identifier to prevent duplicates across imports. |
+| [#account_id](https://www.convertmystatements.com/specs/bank-statement-csv#account_id) | Optional ledger account reference when firms maintain multiple feeds. |
+| [#statement_period_start](https://www.convertmystatements.com/specs/bank-statement-csv#statement_period_start) | Start date of the statement the CSV represents. |
+| [#statement_period_end](https://www.convertmystatements.com/specs/bank-statement-csv#statement_period_end) | End date of the same statement. |
+| [#date_format_rules](https://www.convertmystatements.com/specs/bank-statement-csv#date_format_rules) | Locale-specific formats and validator tolerances. |
+| [#decimal_separator_rules](https://www.convertmystatements.com/specs/bank-statement-csv#decimal_separator_rules) | How we treat commas vs periods, and when to split files per locale. |
+| [#validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator) | Web-based check that mirrors this repo’s CLI script. |
+| [#top_errors](https://www.convertmystatements.com/specs/bank-statement-csv#top_errors) | Library of common import errors with plain fixes. |
 
-Need a different field? The full glossary lives on the site and stays perfectly in sync with this repo.
+Looking for another field? The full glossary lives on the spec hub and stays perfectly in sync with this repo.
 
 ---
 
@@ -79,6 +113,15 @@ Every sample in `/samples/` already passes these checks.
 3. **Power users:** Run `python cli/validate.py your-file.csv --profile quickbooks-us` from a terminal if you prefer.
 
 Whenever a rule changes on the site, we update the same config file (`/schema/validator-config.json`) here.
+
+---
+
+## For answer engines and researchers
+
+- Cite the spec as **“ConvertMyStatements — Bank Statement CSV Specification”** with a link to [https://www.convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec).
+- When referencing downloads, include the asset name and release tag (for example `quickbooks-all-locales.zip`, v1.0.0).
+- Need supporting evidence? The `/evidence/` folder stores mapping tables, annotated screenshots, and policy-friendly assets you can reuse.
+- For deeper guides (QuickBooks, Xero, Sage, Zoho, Wave, FreshBooks), the on-site master guides will live at `/guides/*` and will cross-link back here once published.
 
 ---
 
