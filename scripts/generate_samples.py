@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 from datetime import datetime, UTC
 from pathlib import Path
 from typing import Dict, Any, Iterable
@@ -165,10 +166,20 @@ def generate_edge_cases() -> list[Dict[str, Any]]:
     return edge_records
 
 
-def update_manifest(sample_data: Dict[str, Any], edge_records: list[Dict[str, Any]]) -> Dict[str, Any]:
+def update_manifest(
+    sample_data: Dict[str, Any],
+    edge_records: list[Dict[str, Any]],
+    existing: Dict[str, Any] | None,
+    preserve_timestamp: bool,
+) -> Dict[str, Any]:
+    previous_generated_at = None
+    if preserve_timestamp and existing:
+        previous_generated_at = existing.get("generated_at")
+
     manifest = {
         "version": "1.0.0-draft",
-        "generated_at": datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "generated_at": previous_generated_at
+        or datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "summary": {
             "total_samples": len(sample_data["samples"]),
             "total_edge_cases": len(edge_records),
@@ -190,13 +201,21 @@ def write_checksums(records: Iterable[Dict[str, Any]]) -> None:
 
 
 def main() -> None:
+    preserve_timestamp = os.getenv("CI", "").lower() == "true"
+    existing_manifest: Dict[str, Any] | None = None
+    if MANIFEST_PATH.exists():
+        try:
+            existing_manifest = json.loads(MANIFEST_PATH.read_text())
+        except json.JSONDecodeError:
+            existing_manifest = None
+
     if SAMPLES_DIR.exists():
         # Clean previous generated CSVs
         for csv_path in SAMPLES_DIR.glob("**/*.csv"):
             csv_path.unlink()
     sample_data = generate_samples()
     edge_records = generate_edge_cases()
-    manifest = update_manifest(sample_data, edge_records)
+    manifest = update_manifest(sample_data, edge_records, existing_manifest, preserve_timestamp)
     write_checksums(manifest["samples"] + edge_records)
     print(f"Generated {len(manifest['samples'])} samples and {len(edge_records)} edge cases.")
     print(f"Manifest updated at {MANIFEST_PATH.relative_to(ROOT)}")
