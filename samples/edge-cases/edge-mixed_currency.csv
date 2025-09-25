@@ -1,0 +1,3 @@
+transaction_date,description,amount,debit_credit,currency,unique_id,memo
+2025-02-14,USD card purchase,210.55,debit,USD,EDGE-CUR-001,Supplier charged in USD
+2025-02-15,CAD rent,1800.00,debit,CAD,EDGE-CUR-002,Local rent

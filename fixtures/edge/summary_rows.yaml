@@ -1,0 +1,20 @@
+version: 1
+scenario: "summary_rows"
+description: "File includes monthly summary rows that must be removed."
+expected_error: "CSV031 summary row"
+software_target: "wave"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-SUM-001"
+    transaction_date: "2025-03-31"
+    description: "Total debits"
+    debit_credit: "debit"
+    amount: 8450.23
+    memo: "Summary line"
+  - unique_id: "EDGE-SUM-002"
+    transaction_date: "2025-03-31"
+    description: "Total credits"
+    debit_credit: "credit"
+    amount: 9021.44
+    memo: "Summary line"

@@ -1,0 +1,19 @@
+version: 1
+scenario: "trailing_footer"
+description: "Statement accidentally keeps the PDF footer totals row."
+expected_error: "CSV033 footer detected"
+software_target: "quickbooks"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-FOOT-001"
+    transaction_date: "2025-02-08"
+    description: "POS purchase"
+    debit_credit: "debit"
+    amount: 84.22
+  - unique_id: "FOOTER-TOTAL-DEBITS"
+    transaction_date: "2025-02-28"
+    description: "Total debit amount"
+    debit_credit: "debit"
+    amount: 4150.48
+    memo: "pdf footer"

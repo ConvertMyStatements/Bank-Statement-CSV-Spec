@@ -1,0 +1,9 @@
+transaction_date,description,amount,debit_credit,balance,currency,unique_id,memo
+2025-04-01,Opening balance,0.00,credit,11204.33,USD,CITI-20250401-000,Starting balance
+2025-04-02,Payroll deposit,4850.00,credit,16054.33,USD,CITI-20250402-001,Payroll ACH
+2025-04-03,Office supplies,312.54,debit,15741.79,USD,CITI-20250403-002,Staples invoice 88321
+2025-04-05,Client payment,2750.00,credit,18491.79,USD,CITI-20250405-003,Wire from client
+2025-04-11,Software subscription,149.00,debit,18342.79,USD,CITI-20250411-004,SaaS subscription
+2025-04-16,Merchant batch,1875.32,credit,20218.11,USD,CITI-20250416-005,Card revenue settlement
+2025-04-22,Rent payment,2850.00,debit,17368.11,USD,CITI-20250422-006,Monthly rent
+2025-04-28,Bank service fee,35.00,debit,17333.11,USD,CITI-20250428-007,Maintenance fee

@@ -1,0 +1,287 @@
+version: 1
+softwares:
+- id: quickbooks
+  name: QuickBooks Online
+  profile: quickbooks-us
+  folder: quickbooks
+  locale_overrides:
+    CA: quickbooks-ca
+    UK: quickbooks-uk
+    AU: quickbooks-au
+    NZ: quickbooks-nz
+- id: xero
+  name: Xero
+  profile: xero-global
+  folder: xero
+- id: sage
+  name: Sage Intacct
+  profile: sage-intacct
+  folder: sage
+  locale_overrides:
+    UK: sage-uk
+- id: zoho
+  name: Zoho Books
+  profile: zoho
+  folder: zoho
+- id: wave
+  name: Wave Accounting
+  profile: wave
+  folder: wave
+- id: freshbooks
+  name: FreshBooks
+  profile: freshbooks
+  folder: freshbooks
+regions:
+- code: US
+  name: United States
+  locale: en-US
+  currency: USD
+  date_format: YYYY-MM-DD
+  decimal_separator: .
+  thousands_separator: ','
+  banks:
+  - slug: chase
+    name: Chase Bank
+    account_type: checking
+    opening_balance: 18650.45
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: bank-of-america
+    name: Bank of America
+    account_type: checking
+    opening_balance: 15432.1
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: wells-fargo
+    name: Wells Fargo
+    account_type: checking
+    opening_balance: 12876.55
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: citi
+    name: Citibank
+    account_type: checking
+    opening_balance: 11204.33
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: capital-one
+    name: Capital One
+    account_type: checking
+    opening_balance: 9650.8
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+- code: CA
+  name: Canada
+  locale: en-CA
+  currency: CAD
+  date_format: YYYY-MM-DD
+  decimal_separator: .
+  thousands_separator: ','
+  banks:
+  - slug: rbc
+    name: Royal Bank of Canada
+    account_type: chequing
+    opening_balance: 20450.2
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: td-canada-trust
+    name: TD Canada Trust
+    account_type: chequing
+    opening_balance: 18765.9
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: scotiabank
+    name: Scotiabank
+    account_type: chequing
+    opening_balance: 17321.45
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: bmo
+    name: Bank of Montreal
+    account_type: chequing
+    opening_balance: 16220.6
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: cibc
+    name: CIBC
+    account_type: chequing
+    opening_balance: 14980.75
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+- code: UK
+  name: United Kingdom
+  locale: en-GB
+  currency: GBP
+  date_format: DD/MM/YYYY
+  decimal_separator: .
+  thousands_separator: ','
+  banks:
+  - slug: hsbc-uk
+    name: HSBC UK
+    account_type: current
+    opening_balance: 14550.3
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: barclays
+    name: Barclays
+    account_type: current
+    opening_balance: 13220.8
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: lloyds
+    name: Lloyds Bank
+    account_type: current
+    opening_balance: 11870.25
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: natwest
+    name: NatWest
+    account_type: current
+    opening_balance: 12655.67
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: santander-uk
+    name: Santander UK
+    account_type: current
+    opening_balance: 10998.45
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+- code: AU
+  name: Australia
+  locale: en-AU
+  currency: AUD
+  date_format: DD/MM/YYYY
+  decimal_separator: .
+  thousands_separator: ','
+  banks:
+  - slug: cba
+    name: Commonwealth Bank
+    account_type: business
+    opening_balance: 21500.9
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: westpac
+    name: Westpac
+    account_type: business
+    opening_balance: 19870.4
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: anz
+    name: ANZ Australia
+    account_type: business
+    opening_balance: 18760.2
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: nab
+    name: National Australia Bank
+    account_type: business
+    opening_balance: 17650.75
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: macquarie
+    name: Macquarie Bank
+    account_type: business
+    opening_balance: 16440.35
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+- code: NZ
+  name: New Zealand
+  locale: en-NZ
+  currency: NZD
+  date_format: DD/MM/YYYY
+  decimal_separator: .
+  thousands_separator: ','
+  banks:
+  - slug: anz-nz
+    name: ANZ New Zealand
+    account_type: business
+    opening_balance: 15870.6
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: asb
+    name: ASB Bank
+    account_type: business
+    opening_balance: 14220.15
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: bnz
+    name: Bank of New Zealand
+    account_type: business
+    opening_balance: 13750.4
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: westpac-nz
+    name: Westpac New Zealand
+    account_type: business
+    opening_balance: 12890.8
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+  - slug: kiwibank
+    name: Kiwibank
+    account_type: business
+    opening_balance: 11980.55
+    statement_period:
+      start: '2025-04-01'
+      end: '2025-04-30'
+statement_template:
+  opening_balance: 10254.86
+  transactions:
+  - days_from_start: 1
+    description: Payroll deposit
+    debit_credit: credit
+    amount: 4850.0
+    memo: Payroll ACH
+  - days_from_start: 2
+    description: Office supplies
+    debit_credit: debit
+    amount: 312.54
+    memo: Staples invoice 88321
+  - days_from_start: 4
+    description: Client payment
+    debit_credit: credit
+    amount: 2750.0
+    memo: Wire from client
+  - days_from_start: 10
+    description: Software subscription
+    debit_credit: debit
+    amount: 149.0
+    memo: SaaS subscription
+  - days_from_start: 15
+    description: Merchant batch
+    debit_credit: credit
+    amount: 1875.32
+    memo: Card revenue settlement
+  - days_from_start: 21
+    description: Rent payment
+    debit_credit: debit
+    amount: 2850.0
+    memo: Monthly rent
+  - days_from_start: 27
+    description: Bank service fee
+    debit_credit: debit
+    amount: 35.0
+    memo: Maintenance fee

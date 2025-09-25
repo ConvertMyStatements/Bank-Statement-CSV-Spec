@@ -1,0 +1,3 @@
+transaction_date,description,amount,debit_credit,balance,unique_id
+2025-01-12,ATM withdrawal,200.00,debit,,EDGE-BAL-001
+2025-01-13,Deposit,650.00,credit,,EDGE-BAL-002

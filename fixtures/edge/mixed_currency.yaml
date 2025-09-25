@@ -1,0 +1,22 @@
+version: 1
+scenario: "mixed_currency"
+description: "Statement mixes USD and CAD in the same file."
+expected_error: "CSV022 mixed currency"
+software_target: "xero"
+locale: "en-CA"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-CUR-001"
+    transaction_date: "2025-02-14"
+    description: "USD card purchase"
+    debit_credit: "debit"
+    amount: 210.55
+    currency: "USD"
+    memo: "Supplier charged in USD"
+  - unique_id: "EDGE-CUR-002"
+    transaction_date: "2025-02-15"
+    description: "CAD rent"
+    debit_credit: "debit"
+    amount: 1800.00
+    currency: "CAD"
+    memo: "Local rent"

@@ -1,0 +1,9 @@
+transaction_date,description,amount,debit_credit,balance,currency,unique_id,memo
+01/04/2025,Opening balance,0.00,credit,14550.30,GBP,HSBCUK-20250401-000,Starting balance
+02/04/2025,Payroll deposit,4850.00,credit,19400.30,GBP,HSBCUK-20250402-001,Payroll ACH
+03/04/2025,Office supplies,312.54,debit,19087.76,GBP,HSBCUK-20250403-002,Staples invoice 88321
+05/04/2025,Client payment,2750.00,credit,21837.76,GBP,HSBCUK-20250405-003,Wire from client
+11/04/2025,Software subscription,149.00,debit,21688.76,GBP,HSBCUK-20250411-004,SaaS subscription
+16/04/2025,Merchant batch,1875.32,credit,23564.08,GBP,HSBCUK-20250416-005,Card revenue settlement
+22/04/2025,Rent payment,2850.00,debit,20714.08,GBP,HSBCUK-20250422-006,Monthly rent
+28/04/2025,Bank service fee,35.00,debit,20679.08,GBP,HSBCUK-20250428-007,Maintenance fee

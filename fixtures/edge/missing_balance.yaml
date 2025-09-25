@@ -1,0 +1,20 @@
+version: 1
+scenario: "missing_balance"
+description: "Balance column empty even though software requires it."
+expected_error: "CSV015 missing balance"
+software_target: "freshbooks"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-BAL-001"
+    transaction_date: "2025-01-12"
+    description: "ATM withdrawal"
+    debit_credit: "debit"
+    amount: 200.00
+    balance: null
+  - unique_id: "EDGE-BAL-002"
+    transaction_date: "2025-01-13"
+    description: "Deposit"
+    debit_credit: "credit"
+    amount: 650.00
+    balance: null

@@ -1,0 +1,99 @@
+version: 1
+bank:
+  name: NatWest
+  slug: natwest
+country:
+  code: UK
+  name: United Kingdom
+currency: GBP
+locale: en-GB
+date_format: DD/MM/YYYY
+decimal_separator: .
+thousands_separator: ','
+account_type: current
+statement_period:
+  start: '2025-04-01'
+  end: '2025-04-30'
+opening_balance: 12655.67
+software_profiles:
+  quickbooks:
+    profile: quickbooks-uk
+    folder: quickbooks
+    filename_suffix: uk-standard
+  xero:
+    profile: xero-global
+    folder: xero
+    filename_suffix: uk-standard
+  sage:
+    profile: sage-uk
+    folder: sage
+    filename_suffix: uk-standard
+  zoho:
+    profile: zoho
+    folder: zoho
+    filename_suffix: uk-standard
+  wave:
+    profile: wave
+    folder: wave
+    filename_suffix: uk-standard
+  freshbooks:
+    profile: freshbooks
+    folder: freshbooks
+    filename_suffix: uk-standard
+rows:
+- unique_id: NATWEST-20250401-000
+  transaction_date: 01/04/2025
+  description: Opening balance
+  debit_credit: credit
+  amount: 0.0
+  balance: 12655.67
+  memo: Starting balance
+- unique_id: NATWEST-20250402-001
+  transaction_date: 02/04/2025
+  description: Payroll deposit
+  debit_credit: credit
+  amount: 4850.0
+  balance: 17505.67
+  memo: Payroll ACH
+- unique_id: NATWEST-20250403-002
+  transaction_date: 03/04/2025
+  description: Office supplies
+  debit_credit: debit
+  amount: 312.54
+  balance: 17193.13
+  memo: Staples invoice 88321
+- unique_id: NATWEST-20250405-003
+  transaction_date: 05/04/2025
+  description: Client payment
+  debit_credit: credit
+  amount: 2750.0
+  balance: 19943.13
+  memo: Wire from client
+- unique_id: NATWEST-20250411-004
+  transaction_date: 11/04/2025
+  description: Software subscription
+  debit_credit: debit
+  amount: 149.0
+  balance: 19794.13
+  memo: SaaS subscription
+- unique_id: NATWEST-20250416-005
+  transaction_date: 16/04/2025
+  description: Merchant batch
+  debit_credit: credit
+  amount: 1875.32
+  balance: 21669.45
+  memo: Card revenue settlement
+- unique_id: NATWEST-20250422-006
+  transaction_date: 22/04/2025
+  description: Rent payment
+  debit_credit: debit
+  amount: 2850.0
+  balance: 18819.45
+  memo: Monthly rent
+- unique_id: NATWEST-20250428-007
+  transaction_date: 28/04/2025
+  description: Bank service fee
+  debit_credit: debit
+  amount: 35.0
+  balance: 18784.45
+  memo: Maintenance fee

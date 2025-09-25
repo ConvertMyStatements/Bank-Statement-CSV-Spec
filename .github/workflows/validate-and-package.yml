@@ -1,0 +1,52 @@
+name: Samples & Validator
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate fixtures
+        run: python scripts/generate_fixtures.py
+
+      - name: Generate samples and manifest
+        run: python scripts/generate_samples.py
+
+      - name: Package release bundles
+        run: python scripts/package_release.py
+
+      - name: Smoke test validator
+        run: python cli/validate.py samples/quickbooks/us/chase__quickbooks__us-standard.csv --profile quickbooks-us
+
+      - name: Ensure repo is clean
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Generated files differ from committed versions. Run scripts/generate_samples.py locally and commit the results." >&2
+            git status --short
+            exit 1
+          fi
+
+      - name: Upload release bundles
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-bundles
+          path: releases/*

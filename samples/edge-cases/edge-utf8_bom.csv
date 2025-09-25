@@ -1,0 +1,2 @@
+transaction_date,description,amount,debit_credit,unique_id,memo
+2025-03-10,Vendor payment,420.00,debit,EDGE-BOM-001,Contains BOM at start

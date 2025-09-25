@@ -1,0 +1,14 @@
+version: 1
+scenario: "utf8_bom"
+description: "File encoded with UTF-8 BOM characters."
+expected_error: "CSV017 encoding failure"
+software_target: "quickbooks"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-BOM-001"
+    transaction_date: "2025-03-10"
+    description: "Vendor payment"
+    debit_credit: "debit"
+    amount: 420.00
+    memo: "Contains BOM at start"

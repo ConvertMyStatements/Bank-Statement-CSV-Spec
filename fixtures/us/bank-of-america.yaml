@@ -1,0 +1,99 @@
+version: 1
+bank:
+  name: Bank of America
+  slug: bank-of-america
+country:
+  code: US
+  name: United States
+currency: USD
+locale: en-US
+date_format: YYYY-MM-DD
+decimal_separator: .
+thousands_separator: ','
+account_type: checking
+statement_period:
+  start: '2025-04-01'
+  end: '2025-04-30'
+opening_balance: 15432.1
+software_profiles:
+  quickbooks:
+    profile: quickbooks-us
+    folder: quickbooks
+    filename_suffix: us-standard
+  xero:
+    profile: xero-global
+    folder: xero
+    filename_suffix: us-standard
+  sage:
+    profile: sage-intacct
+    folder: sage
+    filename_suffix: us-standard
+  zoho:
+    profile: zoho
+    folder: zoho
+    filename_suffix: us-standard
+  wave:
+    profile: wave
+    folder: wave
+    filename_suffix: us-standard
+  freshbooks:
+    profile: freshbooks
+    folder: freshbooks
+    filename_suffix: us-standard
+rows:
+- unique_id: BANKOFAMERICA-20250401-000
+  transaction_date: '2025-04-01'
+  description: Opening balance
+  debit_credit: credit
+  amount: 0.0
+  balance: 15432.1
+  memo: Starting balance
+- unique_id: BANKOFAMERICA-20250402-001
+  transaction_date: '2025-04-02'
+  description: Payroll deposit
+  debit_credit: credit
+  amount: 4850.0
+  balance: 20282.1
+  memo: Payroll ACH
+- unique_id: BANKOFAMERICA-20250403-002
+  transaction_date: '2025-04-03'
+  description: Office supplies
+  debit_credit: debit
+  amount: 312.54
+  balance: 19969.56
+  memo: Staples invoice 88321
+- unique_id: BANKOFAMERICA-20250405-003
+  transaction_date: '2025-04-05'
+  description: Client payment
+  debit_credit: credit
+  amount: 2750.0
+  balance: 22719.56
+  memo: Wire from client
+- unique_id: BANKOFAMERICA-20250411-004
+  transaction_date: '2025-04-11'
+  description: Software subscription
+  debit_credit: debit
+  amount: 149.0
+  balance: 22570.56
+  memo: SaaS subscription
+- unique_id: BANKOFAMERICA-20250416-005
+  transaction_date: '2025-04-16'
+  description: Merchant batch
+  debit_credit: credit
+  amount: 1875.32
+  balance: 24445.88
+  memo: Card revenue settlement
+- unique_id: BANKOFAMERICA-20250422-006
+  transaction_date: '2025-04-22'
+  description: Rent payment
+  debit_credit: debit
+  amount: 2850.0
+  balance: 21595.88
+  memo: Monthly rent
+- unique_id: BANKOFAMERICA-20250428-007
+  transaction_date: '2025-04-28'
+  description: Bank service fee
+  debit_credit: debit
+  amount: 35.0
+  balance: 21560.88
+  memo: Maintenance fee

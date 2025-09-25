@@ -1,0 +1,99 @@
+version: 1
+bank:
+  name: ANZ New Zealand
+  slug: anz-nz
+country:
+  code: NZ
+  name: New Zealand
+currency: NZD
+locale: en-NZ
+date_format: DD/MM/YYYY
+decimal_separator: .
+thousands_separator: ','
+account_type: business
+statement_period:
+  start: '2025-04-01'
+  end: '2025-04-30'
+opening_balance: 15870.6
+software_profiles:
+  quickbooks:
+    profile: quickbooks-nz
+    folder: quickbooks
+    filename_suffix: nz-standard
+  xero:
+    profile: xero-global
+    folder: xero
+    filename_suffix: nz-standard
+  sage:
+    profile: sage-intacct
+    folder: sage
+    filename_suffix: nz-standard
+  zoho:
+    profile: zoho
+    folder: zoho
+    filename_suffix: nz-standard
+  wave:
+    profile: wave
+    folder: wave
+    filename_suffix: nz-standard
+  freshbooks:
+    profile: freshbooks
+    folder: freshbooks
+    filename_suffix: nz-standard
+rows:
+- unique_id: ANZNZ-20250401-000
+  transaction_date: 01/04/2025
+  description: Opening balance
+  debit_credit: credit
+  amount: 0.0
+  balance: 15870.6
+  memo: Starting balance
+- unique_id: ANZNZ-20250402-001
+  transaction_date: 02/04/2025
+  description: Payroll deposit
+  debit_credit: credit
+  amount: 4850.0
+  balance: 20720.6
+  memo: Payroll ACH
+- unique_id: ANZNZ-20250403-002
+  transaction_date: 03/04/2025
+  description: Office supplies
+  debit_credit: debit
+  amount: 312.54
+  balance: 20408.06
+  memo: Staples invoice 88321
+- unique_id: ANZNZ-20250405-003
+  transaction_date: 05/04/2025
+  description: Client payment
+  debit_credit: credit
+  amount: 2750.0
+  balance: 23158.06
+  memo: Wire from client
+- unique_id: ANZNZ-20250411-004
+  transaction_date: 11/04/2025
+  description: Software subscription
+  debit_credit: debit
+  amount: 149.0
+  balance: 23009.06
+  memo: SaaS subscription
+- unique_id: ANZNZ-20250416-005
+  transaction_date: 16/04/2025
+  description: Merchant batch
+  debit_credit: credit
+  amount: 1875.32
+  balance: 24884.38
+  memo: Card revenue settlement
+- unique_id: ANZNZ-20250422-006
+  transaction_date: 22/04/2025
+  description: Rent payment
+  debit_credit: debit
+  amount: 2850.0
+  balance: 22034.38
+  memo: Monthly rent
+- unique_id: ANZNZ-20250428-007
+  transaction_date: 28/04/2025
+  description: Bank service fee
+  debit_credit: debit
+  amount: 35.0
+  balance: 21999.38
+  memo: Maintenance fee

@@ -1,0 +1,164 @@
+{
+  "version": "2025-09-25",
+  "required_columns": [
+    "transaction_date",
+    "description",
+    "amount",
+    "debit_credit",
+    "balance",
+    "currency",
+    "unique_id"
+  ],
+  "optional_columns": [
+    "memo"
+  ],
+  "allowed_debit_credit": [
+    "debit",
+    "credit"
+  ],
+  "amount_pattern": "^\\d+\\.\\d{2}$",
+  "profiles": {
+    "quickbooks-us": {
+      "label": "QuickBooks Online \u00b7 United States",
+      "currency": [
+        "USD"
+      ],
+      "date_format": [
+        "%Y-%m-%d",
+        "%d/%m/%Y"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "quickbooks-ca": {
+      "label": "QuickBooks Online \u00b7 Canada",
+      "currency": [
+        "CAD"
+      ],
+      "date_format": [
+        "%Y-%m-%d",
+        "%d/%m/%Y"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "quickbooks-uk": {
+      "label": "QuickBooks Online \u00b7 United Kingdom",
+      "currency": [
+        "GBP"
+      ],
+      "date_format": [
+        "%d/%m/%Y",
+        "%Y-%m-%d"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "quickbooks-au": {
+      "label": "QuickBooks Online \u00b7 Australia",
+      "currency": [
+        "AUD"
+      ],
+      "date_format": [
+        "%d/%m/%Y",
+        "%Y-%m-%d"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "quickbooks-nz": {
+      "label": "QuickBooks Online \u00b7 New Zealand",
+      "currency": [
+        "NZD"
+      ],
+      "date_format": [
+        "%d/%m/%Y",
+        "%Y-%m-%d"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "xero-global": {
+      "label": "Xero",
+      "currency": [
+        "USD",
+        "CAD",
+        "GBP",
+        "AUD",
+        "NZD"
+      ],
+      "date_format": [
+        "%d/%m/%Y",
+        "%Y-%m-%d"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "sage-intacct": {
+      "label": "Sage",
+      "currency": [
+        "USD",
+        "GBP",
+        "AUD",
+        "CAD"
+      ],
+      "date_format": [
+        "%d/%m/%Y",
+        "%Y-%m-%d"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "sage-uk": {
+      "label": "Sage \u00b7 UK",
+      "currency": [
+        "GBP"
+      ],
+      "date_format": "%d/%m/%Y",
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "zoho": {
+      "label": "Zoho Books",
+      "currency": [
+        "USD",
+        "CAD",
+        "GBP",
+        "AUD",
+        "NZD"
+      ],
+      "date_format": [
+        "%Y-%m-%d",
+        "%d/%m/%Y"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "wave": {
+      "label": "Wave Accounting",
+      "currency": [
+        "USD",
+        "CAD"
+      ],
+      "date_format": [
+        "%Y-%m-%d",
+        "%d/%m/%Y"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    },
+    "freshbooks": {
+      "label": "FreshBooks",
+      "currency": [
+        "USD",
+        "CAD"
+      ],
+      "date_format": [
+        "%Y-%m-%d",
+        "%d/%m/%Y"
+      ],
+      "decimal_separator": ".",
+      "thousands_separator": ","
+    }
+  }
+}

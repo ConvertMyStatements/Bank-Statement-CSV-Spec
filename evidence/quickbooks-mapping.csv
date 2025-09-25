@@ -1,0 +1,8 @@
+source_column,target_field,notes
+transaction_date,Statement Date,"Keep YYYY-MM-DD or MM/DD/YYYY depending on locale"
+description,Memo,"Shows on the bank feed detail"
+amount,Amount,"Signed amount; debit_credit column decides sign"
+debit_credit,Transaction Type,"QuickBooks uses this to classify money in vs money out"
+balance,Balance,"Helps auditors trace running totals"
+unique_id,Reference no.,"Prevents duplicates when re-importing"
+currency,Currency,"Lock to the same currency per CSV"

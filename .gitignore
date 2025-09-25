@@ -1,0 +1,18 @@
+# General
+.DS_Store
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env
+
+# Generated artifacts
+samples/**/*.zip
+releases/

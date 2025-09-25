@@ -1,0 +1,3 @@
+transaction_date,description,amount,debit_credit,unique_id,memo
+2025-03-31,Total debits,8450.23,debit,EDGE-SUM-001,Summary line
+2025-03-31,Total credits,9021.44,credit,EDGE-SUM-002,Summary line

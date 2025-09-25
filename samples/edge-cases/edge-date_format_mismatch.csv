@@ -1,0 +1,3 @@
+transaction_date,description,amount,debit_credit,unique_id,memo
+01/03/2025,Supplier payment,425.10,debit,EDGE-DATE-001,Invoice 554
+02/03/2025,Client receipt,980.00,credit,EDGE-DATE-002,Customer deposit

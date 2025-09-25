@@ -1,0 +1,20 @@
+version: 1
+scenario: "date_format_mismatch"
+description: "Statement uses DD/MM/YYYY but file claims US format."
+expected_error: "CSV004 date format"
+software_target: "sage"
+locale: "en-GB"
+date_format: "DD/MM/YYYY"
+rows:
+  - unique_id: "EDGE-DATE-001"
+    transaction_date: "01/03/2025"
+    description: "Supplier payment"
+    debit_credit: "debit"
+    amount: 425.10
+    memo: "Invoice 554"
+  - unique_id: "EDGE-DATE-002"
+    transaction_date: "02/03/2025"
+    description: "Client receipt"
+    debit_credit: "credit"
+    amount: 980.00
+    memo: "Customer deposit"

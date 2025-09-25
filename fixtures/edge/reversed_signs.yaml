@@ -1,0 +1,20 @@
+version: 1
+scenario: "reversed_signs"
+description: "Debits and credits flipped causing negative imports."
+expected_error: "CSV008 debit credit mismatch"
+software_target: "zoho"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-SIGN-001"
+    transaction_date: "2025-05-05"
+    description: "Card payment"
+    debit_credit: "credit"
+    amount: -245.66
+    memo: "Should be debit"
+  - unique_id: "EDGE-SIGN-002"
+    transaction_date: "2025-05-06"
+    description: "Client deposit"
+    debit_credit: "debit"
+    amount: 1420.33
+    memo: "Should be credit"

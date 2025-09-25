@@ -1,0 +1,22 @@
+version: 1
+scenario: "duplicate_transactions"
+description: "Two identical payment rows share the same unique_id."
+expected_error: "CSV010 duplicate value"
+software_target: "quickbooks"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-DUP-001"
+    transaction_date: "2025-04-03"
+    description: "Duplicate expense"
+    debit_credit: "debit"
+    amount: 120.00
+    balance: 9820.11
+    memo: "Office expense"
+  - unique_id: "EDGE-DUP-001"
+    transaction_date: "2025-04-03"
+    description: "Duplicate expense"
+    debit_credit: "debit"
+    amount: 120.00
+    balance: 9700.11
+    memo: "Office expense duplicate"

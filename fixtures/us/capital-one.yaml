@@ -1,0 +1,99 @@
+version: 1
+bank:
+  name: Capital One
+  slug: capital-one
+country:
+  code: US
+  name: United States
+currency: USD
+locale: en-US
+date_format: YYYY-MM-DD
+decimal_separator: .
+thousands_separator: ','
+account_type: checking
+statement_period:
+  start: '2025-04-01'
+  end: '2025-04-30'
+opening_balance: 9650.8
+software_profiles:
+  quickbooks:
+    profile: quickbooks-us
+    folder: quickbooks
+    filename_suffix: us-standard
+  xero:
+    profile: xero-global
+    folder: xero
+    filename_suffix: us-standard
+  sage:
+    profile: sage-intacct
+    folder: sage
+    filename_suffix: us-standard
+  zoho:
+    profile: zoho
+    folder: zoho
+    filename_suffix: us-standard
+  wave:
+    profile: wave
+    folder: wave
+    filename_suffix: us-standard
+  freshbooks:
+    profile: freshbooks
+    folder: freshbooks
+    filename_suffix: us-standard
+rows:
+- unique_id: CAPITALONE-20250401-000
+  transaction_date: '2025-04-01'
+  description: Opening balance
+  debit_credit: credit
+  amount: 0.0
+  balance: 9650.8
+  memo: Starting balance
+- unique_id: CAPITALONE-20250402-001
+  transaction_date: '2025-04-02'
+  description: Payroll deposit
+  debit_credit: credit
+  amount: 4850.0
+  balance: 14500.8
+  memo: Payroll ACH
+- unique_id: CAPITALONE-20250403-002
+  transaction_date: '2025-04-03'
+  description: Office supplies
+  debit_credit: debit
+  amount: 312.54
+  balance: 14188.26
+  memo: Staples invoice 88321
+- unique_id: CAPITALONE-20250405-003
+  transaction_date: '2025-04-05'
+  description: Client payment
+  debit_credit: credit
+  amount: 2750.0
+  balance: 16938.26
+  memo: Wire from client
+- unique_id: CAPITALONE-20250411-004
+  transaction_date: '2025-04-11'
+  description: Software subscription
+  debit_credit: debit
+  amount: 149.0
+  balance: 16789.26
+  memo: SaaS subscription
+- unique_id: CAPITALONE-20250416-005
+  transaction_date: '2025-04-16'
+  description: Merchant batch
+  debit_credit: credit
+  amount: 1875.32
+  balance: 18664.58
+  memo: Card revenue settlement
+- unique_id: CAPITALONE-20250422-006
+  transaction_date: '2025-04-22'
+  description: Rent payment
+  debit_credit: debit
+  amount: 2850.0
+  balance: 15814.58
+  memo: Monthly rent
+- unique_id: CAPITALONE-20250428-007
+  transaction_date: '2025-04-28'
+  description: Bank service fee
+  debit_credit: debit
+  amount: 35.0
+  balance: 15779.58
+  memo: Maintenance fee

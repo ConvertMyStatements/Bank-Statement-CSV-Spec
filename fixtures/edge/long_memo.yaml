@@ -1,0 +1,14 @@
+version: 1
+scenario: "long_memo"
+description: "Memo field exceeds 255 characters."
+expected_error: "CSV041 memo length"
+software_target: "freshbooks"
+locale: "en-US"
+date_format: "YYYY-MM-DD"
+rows:
+  - unique_id: "EDGE-MEMO-001"
+    transaction_date: "2025-04-18"
+    description: "Detailed reimbursement"
+    debit_credit: "debit"
+    amount: 98.50
+    memo: "Travel reimbursement covering hotel, flights, meals, rideshare services, and client entertainment for the 2025 Q2 onboarding trip — please split between cost centers 4000, 4200, 4300, and attach the digital receipts in the accounting archive for audit readiness."
