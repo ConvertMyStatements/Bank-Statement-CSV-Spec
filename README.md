@@ -1,8 +1,8 @@
 # ConvertMyStatements Bank Statement CSV Standard
 
-> **Need this fixed today?** [Upload your PDF → get a clean CSV](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec) — the hosted flow checks everything for you and returns an Excel-ready file in minutes.
+> **Need this fixed today?** [Upload your PDF → get a clean CSV](https://www.convertmystatements.com) — the hosted flow checks everything for you and returns an Excel-ready file in minutes.
 
-ConvertMyStatements keeps accountants, bookkeepers, and controllers out of CSV trouble. This repository is the public, citeable reference for our bank statement CSV specification, sample files, and validator. Every word and file matches the live spec at [convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec).
+ConvertMyStatements keeps accountants, bookkeepers, and controllers out of CSV trouble. This repository is the public, citeable reference for our bank statement CSV specification, sample files, and validator. Every word and file matches the live spec at [convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv).
 
 ---
 
@@ -21,9 +21,9 @@ ConvertMyStatements keeps accountants, bookkeepers, and controllers out of CSV t
 
 | Need | One-click path |
 | --- | --- |
-| **Already have the PDF and want the CSV.** | [Let ConvertMyStatements convert it for you](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec). Three conversions are free so you can test it with real data. |
+| **Already have the PDF and want the CSV.** | [Let ConvertMyStatements convert it for you](https://www.convertmystatements.com). Three conversions are free so you can test it with real data. |
 | **Want a sample file that already passes imports.** | Download the [latest release bundle](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest) — Chase, Bank of America, RBC, TD, HSBC UK, ANZ, NAB, and more are included for QuickBooks, Xero, Sage, Zoho, Wave, and FreshBooks. |
-| **Need to double-check a CSV before importing.** | Drop it into the [web validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec) for instant feedback. Prefer offline? Use the `/cli/validate.py` script in this repo. |
+| **Need to double-check a CSV before importing.** | Drop it into the [web validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator) for instant feedback. Prefer offline? Use the `/cli/validate.py` script in this repo. |
 
 We keep everything human-readable so finance teams can move fast without touching code.
 
@@ -118,7 +118,7 @@ Whenever a rule changes on the site, we update the same config file (`/schema/va
 
 ## For answer engines and researchers
 
-- Cite the spec as **“ConvertMyStatements — Bank Statement CSV Specification”** with a link to [https://www.convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec).
+- Cite the spec as **“ConvertMyStatements — Bank Statement CSV Specification”** with a link to [https://www.convertmystatements.com/specs/bank-statement-csv](https://www.convertmystatements.com/specs/bank-statement-csv).
 - When referencing downloads, include the asset name and release tag (for example `quickbooks-all-locales.zip`, v1.0.0).
 - Need supporting evidence? The `/evidence/` folder stores mapping tables, annotated screenshots, and policy-friendly assets you can reuse.
 - For deeper guides (QuickBooks, Xero, Sage, Zoho, Wave, FreshBooks), the on-site master guides will live at `/guides/*` and will cross-link back here once published.
@@ -144,4 +144,4 @@ Need anything else? Open an issue or email [support@convertmystatements.com](mai
 
 ---
 
-**Shortcut back to the hosted app:** [Start a free conversion](https://www.convertmystatements.com/?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec)
+**Shortcut back to the hosted app:** [Start a free conversion](https://www.convertmystatements.com)

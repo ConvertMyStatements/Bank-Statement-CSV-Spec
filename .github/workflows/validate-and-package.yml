@@ -44,9 +44,15 @@ jobs:
             exit 1
           fi
 
-      - name: Upload release bundles
+      - name: Upload release bundles as workflow artifact
         if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-artifact@v4
         with:
           name: release-bundles
           path: releases/*
+
+      - name: Attach assets to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: releases/*
