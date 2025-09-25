@@ -45,9 +45,11 @@ def load_yaml(path: Path) -> Dict[str, Any]:
 
 
 def iter_bank_fixtures() -> Iterable[Path]:
-    for path in FIXTURES_DIR.glob("*/*.yaml"):
-        if path.parent.name == "edge":
-            continue
+    paths = sorted(
+        (path for path in FIXTURES_DIR.glob("*/*.yaml") if path.parent.name != "edge"),
+        key=lambda p: (p.parent.name, p.name),
+    )
+    for path in paths:
         yield path
 
 
@@ -93,7 +95,8 @@ def generate_samples() -> Dict[str, Any]:
         locale = fixture["locale"]
         account_type = fixture["account_type"]
 
-        for software_id, profile in software_profiles.items():
+        for software_id in sorted(software_profiles.keys()):
+            profile = software_profiles[software_id]
             rows = [build_standard_row(row, currency) for row in fixture["rows"]]
             folder = profile["folder"]
             region_code = country["code"].lower()
@@ -116,6 +119,7 @@ def generate_samples() -> Dict[str, Any]:
                 }
             )
 
+    manifest_records.sort(key=lambda item: (item["software"], item["country_code"], item["bank_slug"], item["path"]))
     return {
         "samples": manifest_records,
     }
@@ -163,6 +167,7 @@ def generate_edge_cases() -> list[Dict[str, Any]]:
                 "checksum_sha256": sha,
             }
         )
+    edge_records.sort(key=lambda item: item["scenario"])
     return edge_records
 
 
@@ -197,6 +202,7 @@ def write_checksums(records: Iterable[Dict[str, Any]]) -> None:
     lines = []
     for record in records:
         lines.append(f"{record['checksum_sha256']}  {record['path']}")
+    lines.sort()
     CHECKSUMS_PATH.write_text("\n".join(lines) + "\n")
 
 
