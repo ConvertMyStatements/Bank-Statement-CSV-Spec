@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import zipfile
+from datetime import datetime
 from pathlib import Path
 from typing import Iterable
 
@@ -13,11 +14,20 @@ CHECKSUMS = ROOT / "checksums.txt"
 MANIFEST = ROOT / "MANIFEST.json"
 
 
+CANONICAL_ZIP_TIMESTAMP = datetime(2025, 1, 1, 0, 0, 0)
+
+
 def zip_files(target: Path, files: Iterable[Path]) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = CANONICAL_ZIP_TIMESTAMP.timetuple()[:6]
     with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for file_path in sorted(files, key=lambda p: p.as_posix()):
-            archive.write(file_path, file_path.relative_to(ROOT))
+            data = file_path.read_bytes()
+            info = zipfile.ZipInfo(file_path.relative_to(ROOT).as_posix(), timestamp)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            # Ensure consistent permissions (rw-r--r--)
+            info.external_attr = (0o644 << 16)
+            archive.writestr(info, data)
 
 
 def iter_sample_files() -> Iterable[Path]:

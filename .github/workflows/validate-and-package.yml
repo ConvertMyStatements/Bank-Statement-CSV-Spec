@@ -1,5 +1,8 @@
 name: Samples & Validator
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [main]
