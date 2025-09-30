@@ -103,6 +103,26 @@ Every sample in `/samples/` already passes these checks.
 
 ---
 
+## 🛠️ Free Tools & Resources
+
+### CSV Date Format Fixer
+
+Having trouble with date formats in your bank statement CSVs? Our [CSV Date Format Fixer](https://claude.ai/public/artifacts/efb183f5-3448-4ad0-9758-73563d845d75) is a free, interactive tool that instantly converts between common date formats — no signup required.
+
+**Perfect for:**
+- Converting MM/DD/YYYY to DD/MM/YYYY (or vice versa)
+- Standardizing to ISO format (YYYY-MM-DD) for QuickBooks and Xero
+- Fixing mixed date formats in bank statement CSV files
+- Quick fixes before importing into accounting software
+
+This tool has been trusted by 1,000+ accounting professionals to solve real CSV date format problems. It's particularly useful when dealing with international bank statements or when your accounting software expects a specific date format.
+
+### Professional Conversion Service
+
+For complete PDF-to-CSV conversions with guaranteed accuracy, [ConvertMyStatements](https://convertmystatements.com) handles the entire process — from complex multi-page PDFs to perfectly formatted, import-ready CSVs that pass all validation checks.
+
+---
+
 ## How to use the validator
 
 1. **Easiest:** Drop your file into the [web validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec) — no installation, instant feedback.
