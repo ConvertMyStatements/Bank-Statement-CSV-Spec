@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
 CONFIG_DEFAULT = Path(__file__).resolve().parents[1] / "schema" / "validator-config.json"
-CTA_LINK = "https://www.convertmystatements.com/specs/bank-statement-csv#validator?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec"
+CTA_LINK = "https://www.zerabooks.com/convert-bank-statement-to-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec"
 
 
 class ValidationIssue:

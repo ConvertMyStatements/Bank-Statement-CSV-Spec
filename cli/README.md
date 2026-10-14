@@ -17,6 +17,6 @@ python cli/validate.py path/to/your.csv --profile quickbooks-us
 
 Profiles available: `quickbooks-us`, `quickbooks-ca`, `xero-global`, `sage-uk`, `zoho`, `wave`, `freshbooks`.
 
-Need help? Email [support@convertmystatements.com](mailto:support@convertmystatements.com?subject=Validator%20help) and we’ll walk through it together.
+Need help? Email [support@zerabooks.com](mailto:support@zerabooks.com?subject=Validator%20help) and we’ll walk through it together.
 
-> Tip: You can skip the script entirely by using the [hosted validator](https://www.convertmystatements.com/specs/bank-statement-csv#validator?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec). It mirrors the same rules and works in any browser.
+> Tip: You can skip the script entirely by using [ZeraBooks](https://www.zerabooks.com/convert-bank-statement-to-csv?utm_source=github&utm_medium=repo&utm_campaign=bank_statement_csv_spec). It converts the PDF and checks it against the printed balances in your browser.
