@@ -166,7 +166,7 @@ When linking to files in this repo, include the CSV name and release tag so read
 - **Code (validator, scripts):** MIT — see `LICENSE-CODE`.
 - **Samples, fixtures, evidence:** Creative Commons Attribution 4.0 — see `LICENSE-SAMPLES`. Credit "ZeraBooks" and link back to this repository.
 
-Need anything else? Open an issue or email [support@zerabooks.com](mailto:support@zerabooks.com?subject=Bank%20Statement%20CSV%20Spec).
+Need anything else? Open an issue or email [daminmutti@zerabooks.com](mailto:daminmutti@zerabooks.com?subject=Bank%20Statement%20CSV%20Spec).
 
 ---
 
