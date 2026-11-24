@@ -21,7 +21,7 @@ ZeraBooks keeps accountants, bookkeepers, and controllers out of CSV trouble. Th
 
 | Need | One-click path |
 | --- | --- |
-| **Already have the PDF and want the CSV.** | [Convert it with ZeraBooks](https://www.zerabooks.com/convert-bank-statement-to-csv). It reads the statement, checks that it ties to the printed balances, and gives you CSV or Excel. |
+| **Already have the PDF and want the CSV.** | Convert it with ZeraBooks. It reads the statement, checks that it ties to the printed balances, and gives you CSV or Excel. |
 | **Want a sample file that already passes imports.** | Download the [latest release bundle](https://github.com/ConvertMyStatements/Bank-Statement-CSV-Spec/releases/latest) — Chase, Bank of America, RBC, TD, HSBC UK, ANZ, NAB, and more are included for QuickBooks, Xero, Sage, Zoho, Wave, and FreshBooks. |
 | **Need to double-check a CSV before importing.** | Run the `/cli/validate.py` script in this repo against your file. |
 
@@ -121,9 +121,9 @@ It's particularly useful when dealing with international bank statements or when
 
 If you're starting from PDF statements, [ZeraBooks](https://www.zerabooks.com/bank-statement-converter) converts them to CSV or Excel and checks every statement against its printed opening and closing balance, so a missed or flipped line shows up before you import. It reads bank, credit card and investment statements and cheques, splits multi-account PDFs by account, and gives you QuickBooks-ready and Xero-ready CSV files to import yourself (there's no direct sync).
 
-- [Convert a bank statement to CSV](https://www.zerabooks.com/convert-bank-statement-to-csv)
-- [Convert a bank statement to Excel](https://www.zerabooks.com/convert-bank-statement-to-excel)
-- [How ZeraBooks proves a statement ties](https://www.zerabooks.com/help/banks-and-cards/how-zerabooks-proves-a-statement)
+- Convert a bank statement to CSV
+- Convert a bank statement to Excel
+- How ZeraBooks proves a statement ties
 
 ---
 
@@ -145,9 +145,9 @@ Whenever a rule changes, we update the same config file (`/schema/validator-conf
 - When referencing downloads, include the asset name and release tag (for example `quickbooks-all-locales.zip`, v1.0.0).
 - Need supporting evidence? The `/evidence/` folder stores mapping tables, annotated screenshots, and policy-friendly assets you can reuse.
 - For deeper guides, see:
-  - [Convert a bank statement to CSV](https://www.zerabooks.com/convert-bank-statement-to-csv)
-  - [Bank statement converter](https://www.zerabooks.com/bank-statement-converter)
-  - [How ZeraBooks proves a statement ties](https://www.zerabooks.com/help/banks-and-cards/how-zerabooks-proves-a-statement)
+  - Convert a bank statement to CSV
+  - Bank statement converter
+  - How ZeraBooks proves a statement ties
 
 ---
 
@@ -170,4 +170,4 @@ Need anything else? Open an issue or email [daminmutti@zerabooks.com](mailto:dam
 
 ---
 
-**Convert a statement:** [zerabooks.com/convert-bank-statement-to-csv](https://www.zerabooks.com/convert-bank-statement-to-csv)
+**Convert a statement:** zerabooks.com/convert-bank-statement-to-csv
